@@ -9,19 +9,19 @@ const Hero = ({ slides }) => {
   const length = slides.length;
   const timeout = useRef(null);
 
-  //   useEffect(() => {
-  //     const nextSlide = () => {
-  //       setCurrent((current) => (current === length - 1 ? 0 : current + 1));
-  //     };
+  useEffect(() => {
+    const nextSlide = () => {
+      setCurrent((current) => (current === length - 1 ? 0 : current + 1));
+    };
 
-  //     timeout.current = setTimeout(nextSlide, 3000);
+    timeout.current = setTimeout(nextSlide, 3000);
 
-  //     return function () {
-  //       if (timeout.current) {
-  //         clearTimeout(timeout.current);
-  //       }
-  //     };
-  //   }, [current, length]);
+    return function () {
+      if (timeout.current) {
+        clearTimeout(timeout.current);
+      }
+    };
+  }, [current, length]);
 
   const nextSlide = () => {
     if (timeout.current) {
@@ -170,7 +170,7 @@ const Arrow = styled(IoMdArrowRoundForward)`
 const SliderButtons = styled.div`
   position: absolute;
   bottom: 50px;
-  right: 50%;
+  right: 5%;
   display: flex;
   z-index: 10;
 `;
