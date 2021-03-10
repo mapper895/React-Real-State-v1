@@ -8,7 +8,7 @@ import Bars from "../img/bars.svg";
 const Navbar = () => {
   return (
     <Nav>
-      <Logo>ELIXR</Logo>
+      <Logo to="/">ELIXR</Logo>
       <MenuBars />
       <NavMenu>
         {menuData.map((item, index) => (
@@ -32,7 +32,6 @@ const Nav = styled.nav`
   z-index: 100;
   position: fixed;
   width: 100%;
-  background: red;
 `;
 
 const NavLink = css`
